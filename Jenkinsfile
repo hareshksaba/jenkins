@@ -21,10 +21,10 @@ pipeline    {
     }   
     post {
         success {
-            mail to:${DEFAULT_RECIPIENTS}, subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
+            mail to:"${DEFAULT_RECIPIENTS}", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
         }
         failure {
-            mail to:${DEFAULT_RECIPIENTS}, subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
+            mail to:"${DEFAULT_RECIPIENTS}", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
         }
     }   
 }
